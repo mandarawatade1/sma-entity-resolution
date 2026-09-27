@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Entity Resolution & Unified Data Repository</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <h1>Multi-Database Entity Resolution</h1>
+  <p class="sub">Ingest datasets, normalize fields, resolve duplicate entities, and build one master repository.</p>
+  <nav id="tabs">
+    <button data-tab="upload" class="active">1. Ingest</button>
+    <button data-tab="resolve">2. Resolve</button>
+    <button data-tab="review">3. Review Matches</button>
+    <button data-tab="repository">4. Master Repository</button>
+  </nav>
+</header>
+
+<main>
+  <section id="tab-upload" class="tab active">
+    <div class="card">
+      <h2>Upload a dataset</h2>
+      <form id="upload-form">
+        <label>Dataset name <input type="text" id="ds-name" required placeholder="e.g. CRM Export"/></label>
+        <label>File (CSV or JSON) <input type="file" id="ds-file" accept=".csv,.json" required/></label>
+        <button type="button" id="btn-preview">Preview columns</button>
+        <div id="mapping-area"></div>
+        <button type="submit" id="btn-upload" disabled>Upload & Normalize</button>
+      </form>
+      <div id="upload-status"></div>
+    </div>
+
+    <div class="card">
+      <h2>Ingested datasets</h2>
+      <table id="datasets-table">
+        <thead><tr><th>ID</th><th>Name</th><th>Rows</th><th>Mapped fields</th><th></th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="tab-resolve" class="tab">
+    <div class="card">
+      <h2>Run entity resolution</h2>
+      <p>Blocks records by name/email/phone/zip, scores candidate pairs with weighted fuzzy matching, then clusters matches above the threshold with union-find.</p>
+      <label>Match threshold: <span id="threshold-val">85</span>%
+        <input type="range" id="threshold" min="50" max="100" value="85"/>
+      </label>
+      <button id="btn-resolve">Run Resolution</button>
+      <div id="resolve-status"></div>
+    </div>
+    <div class="card" id="stats-card">
+      <h2>Snapshot</h2>
+      <div id="stats-grid" class="stats-grid"></div>
+    </div>
+  </section>
+
+  <section id="tab-review" class="tab">
+    <div class="card">
+      <h2>Duplicate groups awaiting review</h2>
+      <p>Records that scored above threshold are grouped here. Pick which value to keep per field, then confirm the merge (or reject to keep them separate).</p>
+      <div id="clusters-list"></div>
+    </div>
+  </section>
+
+  <section id="tab-repository" class="tab">
+    <div class="card">
+      <div class="repo-header">
+        <h2>Master Repository</h2>
+        <a id="export-link" href="/api/repository/export"><button>Export CSV</button></a>
+      </div>
+      <table id="repo-table">
+        <thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Address</th><th>City</th><th>State</th><th>Company</th><th>Sources</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <div id="repo-pagination"></div>
+    </div>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+full_name,email_addr,phone_number,street_address,city_name,state_code,zip_code,company_name
+John A. Smith,john.smith@example.com,+1 (415) 555-0142,123 Main Street Apt 4,San Francisco,CA,94105,Acme Corp
+Priya Sharma,priya.sharma@example.com,+91 98765 43210,45 MG Road,Bangalore,KA,560001,Globex Inc
+Michael O'Brien,mobrien@example.com,555-234-9981,78 Oak Avenue,Chicago,IL,60601,Initech
+Emma Watson,emma.w@example.com,415-555-7723,900 Market St,San Francisco,CA,94103,Acme Corp
+Rahul Verma,rahul.verma@example.com,9123456780,12 Nehru Road,Mumbai,MH,400001,Umbrella LLC
+Sarah Connor,sconnor@example.com,555-909-1234,56 Elm Street,Boston,MA,02108,Cyberdyne
+David Lee,dlee@example.com,555-777-2211,89 Pine Rd,Seattle,WA,98101,Wayne Ent
+Aisha Khan,aisha.khan@example.com,9988776655,34 Park Lane,Delhi,DL,110001,Stark Ind

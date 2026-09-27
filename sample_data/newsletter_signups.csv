@@ -1,0 +1,9 @@
+name,email,phone,address,city,state,zip,org
+John Smith,john.smith@example.com,4155550142,123 Main St Apt 4,San Francisco,CA,94105,Acme Corp
+Priya Sharma,priya.sharma@example.com,919876543210,45 M.G. Road,Bangalore,KA,560001,Globex Inc
+Mike O Brien,mobrien@example.com,5552349981,78 Oak Ave,Chicago,IL,60601,Initech
+Carlos Diaz,carlos.diaz@example.com,555-101-2020,10 Sunset Blvd,Los Angeles,CA,90028,Oscorp
+Emma Watson,emma.watson@example.com,4155557723,900 Market Street,San Francisco,CA,94103,Acme Corporation
+Wei Zhang,wei.zhang@example.com,555-303-4040,22 Bay St,San Jose,CA,95112,Hooli
+Sarah  Connor,sarah.connor@example.com,5559091234,56 Elm St,Boston,MA,02108,Cyberdyne Systems
+Fatima Noor,fatima.noor@example.com,9876501234,5 Garden Rd,Karachi,SD,74200,Weyland
